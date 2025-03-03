@@ -9,10 +9,14 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
+<<<<<<< HEAD
     return cart.reduce((total, item) => {
       const itemCost = parseFloat(item.cost.substring(1));  // Remove '$' and parse to float
       return total + itemCost * item.quantity;
     }, 0).toFixed(2);
+=======
+    return cart.reduce((total, item) => total + item.cost * item.quantity, 0).toFixed(2);
+>>>>>>> 30348c99b328c4e98637fce18191e12578c26bf4
   };
 
   // Continue shopping handler
@@ -32,7 +36,11 @@ const CartItem = ({ onContinueShopping }) => {
     if (item.quantity > 1) {
       dispatch(updateQuantity({ name: item.name, quantity: item.quantity - 1 }));
     } else {
+<<<<<<< HEAD
       dispatch(removeItem(item.name));  // Remove item if quantity reaches 0
+=======
+      dispatch(removeItem(item.name)); // Remove item if quantity reaches 0
+>>>>>>> 30348c99b328c4e98637fce18191e12578c26bf4
     }
   };
 
@@ -43,8 +51,12 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total cost for an item
   const calculateTotalCost = (item) => {
+<<<<<<< HEAD
     const itemCost = parseFloat(item.cost.substring(1));  // Remove '$' and parse to float
     return (itemCost * item.quantity).toFixed(2);
+=======
+    return (item.cost * item.quantity).toFixed(2);
+>>>>>>> 30348c99b328c4e98637fce18191e12578c26bf4
   };
 
   return (
@@ -56,7 +68,11 @@ const CartItem = ({ onContinueShopping }) => {
             <img className="cart-item-image" src={item.image} alt={item.name} />
             <div className="cart-item-details">
               <div className="cart-item-name">{item.name}</div>
+<<<<<<< HEAD
               <div className="cart-item-cost">${parseFloat(item.cost.substring(1)).toFixed(2)}</div>
+=======
+              <div className="cart-item-cost">${item.cost.toFixed(2)}</div>
+>>>>>>> 30348c99b328c4e98637fce18191e12578c26bf4
               <div className="cart-item-quantity">
                 <button
                   className="cart-item-button cart-item-button-dec"
