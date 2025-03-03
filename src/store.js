@@ -1,8 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from './CartSlice';
- const store = configureStore({
+import { configureStore } from '@reduxjs/toolkit';  // Import configureStore from Redux Toolkit
+import cartReducer from './CartSlice';  // Import the cartReducer
+
+// Setting up the Redux store with the cartReducer managing the 'cart' slice of the state
+const store = configureStore({
     reducer: {
-        cart: cartReducer,
+        cart: cartReducer,  // Cart reducer managing the cart state
     },
 });
-export default store
+
+// Export the store to be used throughout the app
+export default store;
